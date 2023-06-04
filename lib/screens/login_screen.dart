@@ -1,4 +1,7 @@
 import 'package:find_job/constants.dart';
+import 'package:find_job/screens/register_screen.dart';
+import 'package:find_job/wigets/custom_textfield.dart';
+import 'package:find_job/wigets/submit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -52,57 +55,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 35,
                       ),
-                      Text(
-                        'Email',
-                        style: theme.textTheme.displayMedium,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            suffixIconColor: kSecondaryColor,
-                            suffixIcon: const Icon(Icons.alternate_email),
-                            hintText: 'Email...',
-                            enabledBorder: kBorder,
-                            border: kBorder,
-                            focusedBorder: kBorder),
-                      ),
+                      const CustomTextField(
+                          suffixIcon: Icon(Icons.alternate_email),
+                          text: 'Email'),
                       const SizedBox(
                         height: 22,
                       ),
-                      Text(
-                        'Password',
-                        style: theme.textTheme.displayMedium,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          suffixIconColor: kSecondaryColor,
-                          suffixIcon: const Icon(Icons.remove_red_eye_sharp),
-                          hintText: 'Password...',
-                          enabledBorder: kBorder,
-                          border: kBorder,
-                          focusedBorder: kBorder,
-                        ),
-                      ),
+                      const CustomTextField(
+                          suffixIcon: Icon(Icons.remove_red_eye),
+                          text: 'Password',
+                          isSecure: true),
                       const SizedBox(
                         height: 50,
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: theme.elevatedButtonTheme.style,
-                        child: Text(
-                          'Submit',
-                          style: theme.textTheme.labelMedium,
-                        ),
-                      ),
+                      const SubmitButton(),
                       Center(
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterScreen()),
+                          ),
                           child: Text(
                             "Register",
                             style: theme.textTheme.labelSmall,
