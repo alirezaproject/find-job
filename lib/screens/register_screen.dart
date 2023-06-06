@@ -53,7 +53,9 @@ class RegisterScreen extends StatelessWidget {
                   const SizedBox(
                     height: 45,
                   ),
-                  const SubmitButton()
+                  SubmitButton(
+                    onTap: () {},
+                  )
                 ],
               ),
             ),

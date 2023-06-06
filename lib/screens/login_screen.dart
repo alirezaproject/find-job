@@ -1,4 +1,5 @@
 import 'package:find_job/constants.dart';
+import 'package:find_job/screens/home_screen.dart';
 import 'package:find_job/screens/register_screen.dart';
 import 'package:find_job/wigets/custom_textfield.dart';
 import 'package:find_job/wigets/submit_button.dart';
@@ -68,7 +69,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 50,
                       ),
-                      const SubmitButton(),
+                      SubmitButton(
+                          onTap: () => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()))),
                       Center(
                         child: TextButton(
                           onPressed: () => Navigator.push(
